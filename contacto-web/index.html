@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Escudo_de_San_Carlos_(Antioquia).svg" type="image/x-icon">
+    <title>Formulario de Contacto</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        #video-container {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        #video-background {
+            width: 100%;
+            height: auto;
+        }
+
+        .form-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 80%; /* Ajusta el ancho del formulario */
+            max-width: 400px; /* Establece un ancho máximo para evitar que el formulario se vuelva demasiado ancho */
+            margin: 0 auto; /* Centra el formulario horizontalmente */
+        }
+
+        #contact-form {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        button {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @media screen and (max-width: 600px) {
+            .form-container {
+                width: 90%; /* Ajusta el ancho del formulario para pantallas más pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <video autoplay muted loop id="video-background">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="form-container">
+        <form id="contact-form">
+            <h2>Formulario de Contacto</h2>
+            <input type="text" id="nombre" placeholder="Nombre" required><br>
+            <input type="text" id="apellido" placeholder="Apellido" required><br>
+            <input type="email" id="email" placeholder="Correo Electrónico" required><br>
+            <input type="text" id="asunto" placeholder="Asunto" required><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event){
+            event.preventDefault();
+            // Aquí puedes agregar el código para enviar el formulario, por ejemplo, mediante AJAX
+            alert("Formulario enviado correctamente.");
+        });
+    </script>
+</body>
+</html>
